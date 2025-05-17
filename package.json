@@ -1,0 +1,27 @@
+{
+  "name": "daily_data_spli",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+     "start": "concurrently \"npm run start-react\" \"npm run start-backend\" \"npm run start-electron\"",
+  "start-react": "cd frontend/daily_data_split && npm start",
+  "start-backend": "cd backend && node server.mjs",
+  "start-electron": "wait-on http://localhost:3000 && electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoreyNotice/Daily_Data_Spli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CoreyNotice/Daily_Data_Spli/issues"
+  },
+  "homepage": "https://github.com/CoreyNotice/Daily_Data_Spli#readme",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "electron": "^36.2.1",
+    "wait-on": "^8.0.3"
+  }
+}
