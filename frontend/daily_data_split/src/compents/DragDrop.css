@@ -1,0 +1,41 @@
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .styled-table th, .styled-table td {
+    border: 1px solid black;
+    padding: 10px;
+  }
+  
+  .styled-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .styled-table tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  .styled-table tr:hover {
+    background-color: #add8e6;
+    cursor: pointer;
+  }
+  
+  .styled-table tfoot {
+    border-top: 2px solid black;
+    font-weight: bold;
+    background-color: #e0e0e0;
+    text-align: center;
+  }
+  .Excel_Drop {
+    border-style: dashed;
+    width: 25vw; /* 25% of the screen's width */
+    height: 25vh; /* 25% of the screen's height */
+    display: flex; /* Centers content (optional) */
+    justify-content: center; /* Centers content horizontally (optional) */
+    align-items: center; /* Centers content vertically (optional) */
+    margin: auto; /* Centers the rectangle within the screen */
+    background-color: #d31010; /* Light background color (optional) */
+  }
+  
+
