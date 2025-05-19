@@ -22,7 +22,9 @@ app.use(cors())
 const upload = multer({ dest: 'Data/' }); // saved temporarily in /Data/
 
 app.post('/process-excel', upload.single('excelFile'), async(req, res) => {
+  
   try {
+    
     const uploadedFilePath = req.file.path; // multer gives you the uploaded file path
 
     const { worksheet} = readExcelFile(uploadedFilePath);
