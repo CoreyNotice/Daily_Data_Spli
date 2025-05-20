@@ -11,6 +11,7 @@ function createSplashWindow() {
     width: 400,
     height: 200,
     icon:LargeIcon,
+    alwaysOnTop: true,
     frame: false,
     transparent: true,
     webPreferences: {
@@ -49,17 +50,18 @@ win.webContents.openDevTools();
     const template = require('./utils/menu').createTemplate(app)
   const menu=Menu.buildFromTemplate(template)
   Menu.setApplicationMenu(menu)
-  const mainApp = createWindow();
-  const splash =createSplashWindow()
 
-   mainApp.once('ready-to-show', () => {
-      // splash.destroy();
-      // mainApp.show();
-      setTimeout(() => {
-        splash.destroy();
-      }, 5000)
-      mainApp.show();
-    })
+
+
+const mainApp = createWindow();
+const splash = createSplashWindow();
+
+mainApp.once('ready-to-show', () => {
+   setTimeout(() => {
+splash.destroy();
+mainApp.show()
+}, 5000);
+});
 
 })
 

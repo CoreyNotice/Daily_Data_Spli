@@ -38,7 +38,7 @@ app.post('/process-excel', upload.single('excelFile'), async(req, res) => {
     const baseData = processData(worksheet, headerGroup, headerCells);
     const sortData = sortDistricts(baseData);
 
-    const {workbook,workbook2} = createExcel(
+    const {workbook,workbook2,workbook3} = createExcel(
       sortData.schoolDistricts,
       sortData.centralDistricts,
       sortData.specialDistricts,
@@ -48,11 +48,14 @@ app.post('/process-excel', upload.single('excelFile'), async(req, res) => {
     // Send workbook as response
     const buffer1 = xlsx.write(workbook, { type: 'buffer', bookType: 'xlsx' });
     const buffer2 = xlsx.write(workbook2, { type: 'buffer', bookType: 'xlsx' });
+    const buffer3 = xlsx.write(workbook3, { type: 'buffer', bookType: 'xlsx' });
 
 //Create a Zip File
  const zip = new JSZip()
   zip.file('Daily_File_Report.xlsx',buffer1)
   zip.file('FY25_Central_TLUMP.xlsx',buffer2)
+    zip.file('FY25_Schools_TLUMP.xlsx',buffer3)
+
 
   const zipBuffer =  await zip.generateAsync({type:'nodebuffer'});
 

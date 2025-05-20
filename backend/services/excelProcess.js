@@ -50,6 +50,11 @@ export function processData(worksheet, headerGroup, headerCells) {
         rowData[header] = null;
       }
     });
+    
+
+rowData["Comment"] = "GTS FY25 Initial Allocation";
+ rowData["SAM/CAM"] = "Competitive Grants via Grants Tracking System";
+
 
     if (Object.values(rowData).some(value => value !== null)) {
       baseData.push(rowData);
@@ -58,5 +63,4 @@ export function processData(worksheet, headerGroup, headerCells) {
 
   return baseData;
 }
-
 
